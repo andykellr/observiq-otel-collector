@@ -158,6 +158,7 @@ require (
 	github.com/bmatcuk/doublestar/v4 v4.4.0 // indirect
 	github.com/hooklift/gowsdl v0.5.0 // indirect
 	github.com/observiq/observiq-otel-collector/internal/expr v1.14.0 // indirect
+	github.com/observiq/observiq-otel-collector/processor/dynamicreportingprocessor v0.0.0-00010101000000-000000000000 // indirect
 	github.com/ovh/go-ovh v1.3.0 // indirect
 	github.com/relvacode/iso8601 v1.1.0 // indirect
 	github.com/signalfx/signalfx-agent/pkg/apm v0.0.0-20220920175102-539ae8d8ba8e // indirect
@@ -565,6 +566,8 @@ replace github.com/observiq/observiq-otel-collector/processor/maskprocessor => .
 replace github.com/observiq/observiq-otel-collector/processor/logcountprocessor => ./processor/logcountprocessor
 
 replace github.com/observiq/observiq-otel-collector/processor/metricextractprocessor => ./processor/metricextractprocessor
+
+replace github.com/observiq/observiq-otel-collector/processor/dynamicreportingprocessor => ./processor/dynamicreportingprocessor
 
 replace github.com/observiq/observiq-otel-collector/internal/expr => ./internal/expr
 

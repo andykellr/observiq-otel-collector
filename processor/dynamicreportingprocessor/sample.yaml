@@ -1,0 +1,33 @@
+receivers:
+  hostmetrics:
+    collection_interval: 10s
+processors:
+  dynamicreporting/cpu:
+    metrics:
+      - system.cpu.load_average.1m
+      - system.cpu.load_average.5m
+      - system.cpu.load_average.15m
+    intervals:
+      - threshold: 8
+        interval: 1s
+      - threshold: 6
+        interval: 1m
+      - threshold: 0
+        interval: 5m
+
+  # to handle sum metrics, we need to track the last value and last time, compute the rate, and determine the interval from the rate
+  # dynamicreporting/network:
+  #   metrics:
+  #     - system.network.packets
+  #   intervals:
+  #     - min_value:
+
+exporters:
+  logging:
+
+service:
+  pipelines:
+    metrics:
+      receivers: [hostmetrics]
+      processors: [dynamicreporting/cpu]
+      exporters: [logging]
